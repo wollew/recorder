@@ -57,7 +57,7 @@ jobs:
             ls -l docker
       - name: Docker Buildx (build)
         run: |
-          docker buildx build --output "type=image,push=false" ${{ steps.prepare.outputs.buildx_args }}
+          docker build ${TAGS} --file ./docker/Dockerfile ./docker
       - name: Docker Login
         if: success() && github.event_name != 'pull_request'
         env:
