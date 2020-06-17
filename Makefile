@@ -116,7 +116,7 @@ install: ot-recorder ocat
 	mkdir -p `dirname $(DESTDIR)/$(CONFIGFILE)`
 	test -r $(DESTDIR)/$(CONFIGFILE) || install -m 640 etc/ot-recorder.default $(DESTDIR)/$(CONFIGFILE)
 ifndef DESTDIR
-	$(INSTALLDIR)/sbin/ot-recorder --initialize
+	#$(INSTALLDIR)/sbin/ot-recorder --initialize
 endif
 	# mkdir -p $(DESTDIR)/etc/systemd/system/
 	# install --mode 0644 etc/ot-recorder.service $(DESTDIR)/etc/systemd/system/ot-recorder.service
